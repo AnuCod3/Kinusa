@@ -8,7 +8,7 @@ int main()
     RenderWindow window(VideoMode(1280, 720), "Fake Mario by Anusan and Kilian");
     Player one;
 
-    while (window.isOpen())
+    while (window.isOpen()) // push test
     {
         Event event;
         while (window.pollEvent(event))
