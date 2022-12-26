@@ -1,111 +1,69 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
-#include <math.h>
 #include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <ctime>
+#include <chrono>
 using namespace std;
 using namespace sf;
 
+const int WIDTH = 1280;
+const int HEIGHT = 720;
 
-int main()
-{
-    RenderWindow window(VideoMode(1280, 720), "Fake Mario by Anusan and Kilian");
-    Player one;
+using namespace std;
+using namespace sf;
 
-    float speed = 0.f;
+int main(){
+    RenderWindow gameWindow (VideoMode(WIDTH, HEIGHT), "Marioo by Anusan and Kilian");
+    gameWindow.setFramerateLimit(60);
 
-    // Setze die Schwerkraft
-    float gravity = 7.81f;
+    Texture playeroneTexture;
+    playeroneTexture.loadFromFile("C:\\Users\\anush\\CLionProjects\\Marioi\\Wraith_03_Idle_000.png");
 
-    // Setze die maximale Fallgeschwindigkeit
-    float maxFallSpeed = 50.f;
+    Sprite playeroneSprite;
+    playeroneSprite.setTexture(playeroneTexture);
+    playeroneSprite.setPosition(0, 500);
+    playeroneSprite.setScale(0.5, 0.5);
 
-    // Setze die Sprungkraft
-    float jumpPower = 45.f;
-
-    // Setze eine Flag, um zu überprüfen, ob der Spieler auf dem Boden ist
-    bool isOnGround = true;
-
-
-    sf::Clock clock;
-
-    while (window.isOpen()) // push test
-    {
+    //--//
+    Player playerone;
+    while (gameWindow.isOpen()){
         Event event;
-        while (window.pollEvent(event))
-        {
-            //if(one.getPositionY()<=500) one.setPosition(one.getPositionX(), 200);
-
-            if (event.type == Event::Closed)
-                window.close();
-
-            if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space && isOnGround)
-            {
-                speed = -jumpPower;
-                isOnGround = false;
-                cout << "/*u*/\n";
-                cout << "Y = " << one.getPositionY() << "\n";
+        while (gameWindow.pollEvent(event)){
+            if (event.type == Event::Closed){
+                gameWindow.close();
             }
 
-
-
-            // Player Movement
-            if(Keyboard::isKeyPressed(Keyboard::A)) one.moveLeft();
-            if(Keyboard::isKeyPressed(Keyboard::D)) one.moveRight();
-            //if(Keyboard::isKeyPressed(Keyboard::W)) one.moveUp();
-            //if(!Keyboard::isKeyPressed(Keyboard::W)) one.moveDown(); // scheisse code
-
-            // Player Border
-            if(one.getPositionX() >= window.getSize().x-85) {
-                one.setPosition(window.getSize().x-85 , one.getPositionY());
+            if(Keyboard::isKeyPressed(Keyboard::A)) {
+                playeroneSprite.move(-2.0, 0);
             }
 
-            if (one.getPositionX() <= -25) { // x-Border-Left
-                one.setPosition(-25, one.getPositionY());
+            if(Keyboard::isKeyPressed(Keyboard::D)) {
+                playeroneSprite.move(2.0, 0);
             }
 
-            if(one.getPositionY() >= window.getSize().y-20) {
-                one.setPosition(one.getPositionX(), window.getSize().y-50);
+            if(Keyboard::isKeyPressed(Keyboard::Space) && !playerone.getIsJump()) {
+                playeroneSprite.move(0, -2.0);
+                playerone.setIsJump(true);
+                }
+
+            if(playeroneSprite.getPosition().y > 500) {
+                playeroneSprite.setPosition(playeroneSprite.getPosition().x, 500);
+                playerone.setIsJump(false);
             }
-
-            if (one.getPositionY() <= 0) { // y-Border-Bottom
-                one.setPosition(one.getPositionX(), 0);
-            }
-
-            // Berechne die verstrichene Zeit seit dem letzten Frame
-            //float dt = clock.restart().asSeconds();
-
-            //one.update(one, dt); // Aktualisiere den Spieler
-
-           //one.setPosition(x, y);
-
+           /* if(playeroneSprite.getPosition().x > 499) {
+                playerone.setIsJump(false);
+                playeroneSprite.setPosition(playeroneSprite.getPosition().x,500);
+            }*/
         }
 
-        one.setPosition(one.getPositionX(),(one.getPositionY()+speed));
-        speed += gravity;
-
-        cout << "Y Nach Jump = " << one.getPositionY() << "\n";
-
-        // Begrenze die Fallgeschwindigkeit
-        if (speed > maxFallSpeed)
-            speed = maxFallSpeed;
-
-        // Wenn der Spieler den Boden berührt, setze die y-Position auf dem Boden und setze die Flag auf true
-        if (one.getPositionY() > 480)
-        {
-            one.setPosition(one.getPositionX(),480);
-            //one.setPositionY(480);
-            isOnGround = true;
-        }
-
-        // Setze die neue Position des Spielers
-        one.setPosition(one.getPositionX(), one.getPositionY());
-
-        cout << "Letztes Y = " << one.getPositionY() << "\n";
-
-        window.clear(Color::White);
-        window.draw(one.getSprite());
-        window.display();
-
+        gameWindow.clear(Color::Magenta);
+        gameWindow.draw(playeroneSprite);
+        gameWindow.display();
     }
     return 0;
 }
+
