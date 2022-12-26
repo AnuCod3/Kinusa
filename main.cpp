@@ -52,7 +52,7 @@ int main(){
 
             if(playeroneSprite.getPosition().y > 500) {
                 playeroneSprite.setPosition(playeroneSprite.getPosition().x, 500);
-                playerone.setIsJump(false);
+                playerone.setIsJump(false); //Shaisa baustelle jump nix funktion
             }
            /* if(playeroneSprite.getPosition().x > 499) {
                 playerone.setIsJump(false);
