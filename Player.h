@@ -18,11 +18,14 @@ private:
     Sprite sprite;
 
     float x, y;
+    Vector2f velocity;
     float movementSpeed;
     float jumpHeight;
-    float velocityX, velocityY;
-    float gravity;
-    float time;
+    //float gravity; // Schwerkraft
+    //float jumpVelocity; // Sprunggeschwindigkeit
+    float maxJumpDuration; // Maximale Dauer des Sprungs
+    float jumpDuration; // Dauer des aktuellen Sprungs
+    bool isJumping; // Gibt an, ob sich der Spieler im Sprung befindet
 
 public:
     Player();
@@ -31,14 +34,18 @@ public:
     void moveRight();
     void moveUp();
     void moveDown();
+    void jump(Player& player);
 
     void stopLeft();// Stop Player moving in a specific direction
     void stopRight();
     void stopUp();
 
-    double getPositionX();
-    double getPositionY();
+    void update(Player& player, float dt);
+
+    float getPositionX();
+    float getPositionY();
     void setPosition(float x, float y);
+    void setPositionY(float y);
 
 
 
