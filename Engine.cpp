@@ -57,7 +57,7 @@ void Engine::input() {
         Player.jump();
     } else {
         Player.stopJump();
-}
+    }
 
      setIsJump(Player.JumpPossibleGroundDetec());
 }

@@ -48,17 +48,34 @@ bool Player::stopJump() {
 void Player::update(float elapsedTime) {
 
     if (Leftpressed) {
-        playerSprite.move(-speed * elapsedTime, 0);
+        if (Leftpressed && Uppressed) {
+            for (int i = 2; i < 7; ++i)
+            playerSprite.move(-speed * elapsedTime*i*1.5, -speed*i * elapsedTime);
+            //playerSprite.move(speed * elapsedTime*35, -speed*35 * elapsedTime); // Diese Methode ist eher Teleportieren als Springen, Mit Kilian diskutieren
+        }
+        else
+            for (int i = 2; i < 3; ++i)
+                playerSprite.move(-speed * elapsedTime*i*1.5, 0);
+        /*playerSprite.move(-speed * elapsedTime*1.5, 0);*/                       // Gleiches wie oben
     }
-    if (Rightpressed) {
-        playerSprite.move(speed * elapsedTime, 0);
-    }
-    if (Uppressed) {
-        for (int i = 0; i < 45; i++)
-            playerSprite.move(0, -speed * elapsedTime);
-        //access to jump function in engine class to check if player is on ground or not
 
+    if (Rightpressed) {
+        if (Rightpressed && Uppressed) {
+            for (int i = 2; i < 7; ++i)
+                playerSprite.move(speed * elapsedTime*i*1.5, -speed*i * elapsedTime);
+            //playerSprite.move(speed * elapsedTime*35, -speed*35 * elapsedTime); // Diese Methode ist eher Teleportieren als Springen, Mit Kilian diskutieren
+        }
+        else
+            for (int i = 2; i < 3; ++i)
+                playerSprite.move(speed * elapsedTime*i*1.5, 0);
+        /*playerSprite.move(speed * elapsedTime*1.5, 0);*/                        // Gleiches wie oben
     }
+
+    if (Uppressed) {
+        for (int i = 2; i < 7; ++i)
+            playerSprite.move(0, -speed* elapsedTime*i*2.5);
+    }
+
     playerSprite.move(position);
 }
 
