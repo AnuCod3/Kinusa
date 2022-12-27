@@ -20,16 +20,26 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea1ae8ce-514e-446a-a041-87d7c0316a8e" name="Changes" comment="Border ergänzt und Movement teilweise erweitert">
+    <list default="true" id="ea1ae8ce-514e-446a-a041-87d7c0316a8e" name="Changes" comment="Alles neu und noch kein Jump">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wraith_03_Idle_000.png" beforeDir="false" afterPath="$PROJECT_DIR$/PlayerTexture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-2527998eaa59c4ac0ab4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-12-24T23-45-39-0229.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Mario-Debug-07a9dcf1d5a975a788f3.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
-    <list id="43ae9b06-11a4-4441-948a-f1e3d00c940d" name="Changes by Kilian" comment="" />
+    <list id="43ae9b06-11a4-4441-948a-f1e3d00c940d" name="Changes by Kilian" comment="Changes by Kilian">
+      <change beforePath="$PROJECT_DIR$/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +51,49 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/Player.h">
+      <ranges>
+        <range start1="10" end1="14" start2="10" end2="10" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="17" end1="17" start2="13" end2="20" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="19" end1="19" start2="22" end2="23" changelist="43ae9b06-11a4-4441-948a-f1e3d00c940d" />
+        <range start1="20" end1="24" start2="24" end2="34" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="25" end1="28" start2="35" end2="38" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="29" end1="33" start2="39" end2="43" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="41" end1="43" start2="51" end2="52" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/main.cpp">
+      <ranges>
+        <range start1="2" end1="2" start2="2" end2="3" changelist="43ae9b06-11a4-4441-948a-f1e3d00c940d" />
+        <range start1="9" end1="9" start2="10" end2="11" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="11" end1="15" start2="13" end2="13" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="18" end1="42" start2="16" end2="18" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="43" end1="46" start2="19" end2="20" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="47" end1="66" start2="21" end2="21" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/Player.cpp">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="1" changelist="43ae9b06-11a4-4441-948a-f1e3d00c940d" />
+        <range start1="1" end1="1" start2="2" end2="3" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="2" end1="3" start2="4" end2="5" changelist="43ae9b06-11a4-4441-948a-f1e3d00c940d" />
+        <range start1="4" end1="12" start2="6" end2="16" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="13" end1="13" start2="17" end2="20" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="14" end1="16" start2="21" end2="23" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="18" end1="20" start2="25" end2="27" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="22" end1="22" start2="29" end2="32" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="23" end1="26" start2="33" end2="35" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="28" end1="31" start2="37" end2="39" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="33" end1="37" start2="41" end2="64" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="43" end1="43" start2="70" end2="71" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="50" end1="54" start2="78" end2="78" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="56" end1="57" start2="80" end2="81" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="60" end1="61" start2="84" end2="85" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+        <range start1="91" end1="92" start2="115" end2="133" changelist="ea1ae8ce-514e-446a-a041-87d7c0316a8e" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,24 +108,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anush\CLionProjects\Marioi" />
@@ -81,6 +134,11 @@
   </component>
   <component name="RunManager">
     <configuration name="Mario" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Mario" TARGET_NAME="Mario" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Mario" RUN_TARGET_NAME="Mario">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -99,7 +157,9 @@
       <workItem from="1671925317675" duration="5188000" />
       <workItem from="1671968621831" duration="882000" />
       <workItem from="1671998070747" duration="6008000" />
-      <workItem from="1672013228698" duration="5474000" />
+      <workItem from="1672013228698" duration="5817000" />
+      <workItem from="1672092251613" duration="3748000" />
+      <workItem from="1672096314651" duration="10110000" />
     </task>
     <task id="LOCAL-00001" summary="Border ergänzt und Movement teilweise erweitert">
       <created>1671930383775</created>
@@ -115,7 +175,21 @@
       <option name="project" value="LOCAL" />
       <updated>1672013414604</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Alles neu und noch kein Jump">
+      <created>1672018961971</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672018961971</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Changes by Kilian">
+      <created>1672018994623</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1672018994623</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +208,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Border ergänzt und Movement teilweise erweitert" />
-    <option name="LAST_COMMIT_MESSAGE" value="Border ergänzt und Movement teilweise erweitert" />
+    <MESSAGE value="Alles neu und noch kein Jump" />
+    <MESSAGE value="Changes by Kilian" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by Kilian" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -8,29 +8,38 @@ using namespace sf;
 
 class Player {
 private:
-    Texture texture;
-    Sprite sprite;
-
-    bool isJump;
 
     Vector2f position;
     Vector2f velocity;
+    bool Leftpressed;
+    bool Rightpressed;
+    bool Uppressed;
+    float speed;
+    Texture playerTexture;
+    Sprite playerSprite;
+
 public:
     Player();
 
-    bool getIsJump();
-   /* void moveRight();
-    void moveLeft();
-    void jump();
+        bool getIsJump();
+        bool moveRight();
+         bool moveLeft();
+        bool jump();
+        bool stopLeft();
+        bool stopRight();
+        bool stopJump();
+        void update(float elapsedTime);
+        void collisionDetection();
+       bool JumpPossibleGroundDetec();
 
-    void setPosX(float x);
-    void setPosY(float y);
-    void setPos(float x, float y);
+       void setPosX(float x);
+       void setPosY(float y);
+       void setPos(float x, float y);
 
-    Sprite getSprite();
-    float getPosX();
-    float getPosY();
-    Vector2f getPos();
+       /*Sprite getSprite();*/
+       float getPosX();
+       float getPosY();
+       Vector2f getPos();
 
     void setVelX(float x);
     void setVelY(float y);
@@ -39,7 +48,6 @@ public:
     float getVelX();
     float getVelY();
     Vector2f getVel();
-*/
-    void setIsJump(bool isJump);
+
 };
 #endif //MARIO_PLAYER_H

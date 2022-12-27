@@ -65,6 +65,14 @@ build CMakeFiles/Mario.dir/Player.cpp.obj: CXX_COMPILER__Mario_Debug C$:/Users/a
   OBJECT_DIR = CMakeFiles\Mario.dir
   OBJECT_FILE_DIR = CMakeFiles\Mario.dir
 
+build CMakeFiles/Mario.dir/Engine.cpp.obj: CXX_COMPILER__Mario_Debug C$:/Users/anush/CLionProjects/Marioi/Engine.cpp || cmake_object_order_depends_target_Mario
+  DEFINES = -DSFML_STATIC
+  DEP_FILE = CMakeFiles\Mario.dir\Engine.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++1z
+  INCLUDES = -isystem C:/SFML-2.5.1/include
+  OBJECT_DIR = CMakeFiles\Mario.dir
+  OBJECT_FILE_DIR = CMakeFiles\Mario.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Mario
@@ -73,7 +81,7 @@ build CMakeFiles/Mario.dir/Player.cpp.obj: CXX_COMPILER__Mario_Debug C$:/Users/a
 #############################################
 # Link the executable Mario.exe
 
-build Mario.exe: CXX_EXECUTABLE_LINKER__Mario_Debug CMakeFiles/Mario.dir/main.cpp.obj CMakeFiles/Mario.dir/Player.cpp.obj | C$:/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/SFML-2.5.1/lib/libsfml-graphics-s-d.a C$:/SFML-2.5.1/lib/libsfml-audio-s-d.a C$:/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/SFML-2.5.1/lib/libfreetype.a C$:/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libopenal32.a C$:/SFML-2.5.1/lib/libvorbisfile.a C$:/SFML-2.5.1/lib/libvorbisenc.a C$:/SFML-2.5.1/lib/libvorbis.a C$:/SFML-2.5.1/lib/libogg.a C$:/SFML-2.5.1/lib/libFLAC.a
+build Mario.exe: CXX_EXECUTABLE_LINKER__Mario_Debug CMakeFiles/Mario.dir/main.cpp.obj CMakeFiles/Mario.dir/Player.cpp.obj CMakeFiles/Mario.dir/Engine.cpp.obj | C$:/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/SFML-2.5.1/lib/libsfml-graphics-s-d.a C$:/SFML-2.5.1/lib/libsfml-audio-s-d.a C$:/SFML-2.5.1/lib/libsfml-window-s-d.a C$:/SFML-2.5.1/lib/libfreetype.a C$:/SFML-2.5.1/lib/libsfml-system-s-d.a C$:/SFML-2.5.1/lib/libopenal32.a C$:/SFML-2.5.1/lib/libvorbisfile.a C$:/SFML-2.5.1/lib/libvorbisenc.a C$:/SFML-2.5.1/lib/libvorbis.a C$:/SFML-2.5.1/lib/libogg.a C$:/SFML-2.5.1/lib/libFLAC.a
   FLAGS = -g
   LINK_LIBRARIES = C:/SFML-2.5.1/lib/libsfml-system-s-d.a  C:/SFML-2.5.1/lib/libsfml-window-s-d.a  C:/SFML-2.5.1/lib/libsfml-graphics-s-d.a  C:/SFML-2.5.1/lib/libsfml-audio-s-d.a  C:/SFML-2.5.1/lib/libsfml-window-s-d.a  -lgdi32  -lOpenGL32  C:/SFML-2.5.1/lib/libfreetype.a  C:/SFML-2.5.1/lib/libsfml-system-s-d.a  -lwinmm  C:/SFML-2.5.1/lib/libopenal32.a  C:/SFML-2.5.1/lib/libvorbisfile.a  C:/SFML-2.5.1/lib/libvorbisenc.a  C:/SFML-2.5.1/lib/libvorbis.a  C:/SFML-2.5.1/lib/libogg.a  C:/SFML-2.5.1/lib/libFLAC.a  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Mario.dir
