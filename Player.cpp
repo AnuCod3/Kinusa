@@ -1,7 +1,8 @@
+#include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Engine.h"
 using namespace std;
-
+Engine engine;
 Player::Player(){
     speed = 100;
     playerTexture.loadFromFile("../PlayerTexture.png");

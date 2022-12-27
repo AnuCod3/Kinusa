@@ -20,6 +20,7 @@ private:
 
 public:
     Player();
+    Sprite getSprite();
 
         bool getIsJump();
         bool moveRight();
