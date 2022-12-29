@@ -50,30 +50,30 @@ void Player::update(float elapsedTime) {
     if (Leftpressed) {
         if (Leftpressed && Uppressed) {
             for (int i = 2; i < 7; ++i)
-            playerSprite.move(-speed * elapsedTime*i*1.5, -speed*i * elapsedTime);
+            playerSprite.move(-speed * elapsedTime*i*1.25, -speed*i * elapsedTime);
             //playerSprite.move(speed * elapsedTime*35, -speed*35 * elapsedTime); // Diese Methode ist eher Teleportieren als Springen, Mit Kilian diskutieren
         }
         else
             for (int i = 2; i < 3; ++i)
-                playerSprite.move(-speed * elapsedTime*i*1.5, 0);
+                playerSprite.move(-speed * elapsedTime*i*1.25, 0);
         /*playerSprite.move(-speed * elapsedTime*1.5, 0);*/                       // Gleiches wie oben
     }
 
     if (Rightpressed) {
         if (Rightpressed && Uppressed) {
             for (int i = 2; i < 7; ++i)
-                playerSprite.move(speed * elapsedTime*i*1.5, -speed*i * elapsedTime);
+                playerSprite.move(speed * elapsedTime*i*1.25, -speed*i * elapsedTime);
             //playerSprite.move(speed * elapsedTime*35, -speed*35 * elapsedTime); // Diese Methode ist eher Teleportieren als Springen, Mit Kilian diskutieren
         }
         else
             for (int i = 2; i < 3; ++i)
-                playerSprite.move(speed * elapsedTime*i*1.5, 0);
+                playerSprite.move(speed * elapsedTime*i*1.25, 0);
         /*playerSprite.move(speed * elapsedTime*1.5, 0);*/                        // Gleiches wie oben
     }
 
     if (Uppressed) {
         for (int i = 2; i < 7; ++i)
-            playerSprite.move(0, -speed* elapsedTime*i*2.5);
+            playerSprite.move(0, -speed* elapsedTime*i*2.25);
     }
 
     playerSprite.move(position);
