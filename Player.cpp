@@ -45,7 +45,7 @@ bool Player::stopJump() {
 }
 
 
-void Player::update(float elapsedTime) {
+void Player::update(float elapsedTime) { // Erinnerung CollisionDetection Dynamisch machen
 
     if (Leftpressed) {
         if (Leftpressed && Uppressed) {

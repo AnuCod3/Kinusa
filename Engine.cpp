@@ -82,6 +82,3 @@ void Engine::setIsJump(bool val) {
     isJump = val;
 }
 
-bool Engine::getIsJump() {
-    return isJump;
-}

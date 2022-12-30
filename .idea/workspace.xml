@@ -20,14 +20,22 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea1ae8ce-514e-446a-a041-87d7c0316a8e" name="Changes" comment="Jump Movement Verbessert/Ausgebaut,&#10;- Jump ist jetzt smoother">
+    <list default="true" id="ea1ae8ce-514e-446a-a041-87d7c0316a8e" name="Changes" comment="Jump Movement,&#10;- Minimale Anpassung der Werte">
+      <change afterPath="$PROJECT_DIR$/Level.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Level.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-cac045555dab6d96fad6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-12-26T23-02-16-0237.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Mario-Debug-0a982e6d92bf34ad33b0.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
-    <list id="43ae9b06-11a4-4441-948a-f1e3d00c940d" name="Changes by Kilian" comment="Changes by Kilian" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,13 +75,15 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anush\CLionProjects\Marioi" />
+      <recent name="C:\Users\anush\CLionProjects\Marioi\tinyxml" />
       <recent name="C:\Users\anush\CLionProjects\Marioi\cmake-build-debug" />
     </key>
   </component>
@@ -101,7 +111,11 @@
       <workItem from="1672092251613" duration="3748000" />
       <workItem from="1672096314651" duration="10383000" />
       <workItem from="1672178187609" duration="2575000" />
-      <workItem from="1672273857177" duration="1801000" />
+      <workItem from="1672273857177" duration="1876000" />
+      <workItem from="1672275768210" duration="105000" />
+      <workItem from="1672351167292" duration="5171000" />
+      <workItem from="1672356390472" duration="2387000" />
+      <workItem from="1672408980480" duration="2000" />
     </task>
     <task id="LOCAL-00001" summary="Border ergänzt und Movement teilweise erweitert">
       <created>1671930383775</created>
@@ -152,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672180729814</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Jump Movement,&#10;- Minimale Anpassung der Werte">
+      <created>1672275716461</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1672275716461</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +196,8 @@
     <MESSAGE value="Fast alles neu,&#10;+ Engine&#10;+ JumpMovement (Verbesserungswürdig)&#10;+ Background Image (temporär)" />
     <MESSAGE value="Changes by Kilian" />
     <MESSAGE value="Jump Movement Verbessert/Ausgebaut,&#10;- Jump ist jetzt smoother" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jump Movement Verbessert/Ausgebaut,&#10;- Jump ist jetzt smoother" />
+    <MESSAGE value="Jump Movement,&#10;- Minimale Anpassung der Werte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Jump Movement,&#10;- Minimale Anpassung der Werte" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
