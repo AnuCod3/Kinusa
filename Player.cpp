@@ -64,24 +64,20 @@ void Player::update(float elapsedTime) { // Erinnerung CollisionDetection Dynami
         if (Leftpressed && Uppressed) {
             for (int i = 2; i < 7; ++i)
             playerSprite.move(-speed * elapsedTime*i*1.25, -speed*i * elapsedTime);
-            //playerSprite.move(speed * elapsedTime*35, -speed*35 * elapsedTime); // Diese Methode ist eher Teleportieren als Springen, Mit Kilian diskutieren
         }
         else
             for (int i = 2; i < 3; ++i)
                 playerSprite.move(-speed * elapsedTime*i*1.25, 0);
-        /*playerSprite.move(-speed * elapsedTime*1.5, 0);*/                       // Gleiches wie oben
     }
 
     if (Rightpressed) {
         if (Rightpressed && Uppressed) {
             for (int i = 2; i < 7; ++i)
                 playerSprite.move(speed * elapsedTime*i*1.25, -speed*i * elapsedTime);
-            //playerSprite.move(speed * elapsedTime*35, -speed*35 * elapsedTime); // Diese Methode ist eher Teleportieren als Springen, Mit Kilian diskutieren
         }
         else
             for (int i = 2; i < 3; ++i)
                 playerSprite.move(speed * elapsedTime*i*1.25, 0);
-        /*playerSprite.move(speed * elapsedTime*1.5, 0);*/                        // Gleiches wie oben
     }
 
     if (Uppressed) {
@@ -91,6 +87,8 @@ void Player::update(float elapsedTime) { // Erinnerung CollisionDetection Dynami
     }
 
     playerSprite.move(position);
+    collisionDetection();
+    hitbox1.setPosition(playerSprite.getPosition());
 }
 
 
@@ -165,7 +163,7 @@ void Player::collisionDetection() {
     if(getPosY() == getPosY()) std::cout << getPosY() << " \nr";
 }
 
-bool Player::JumpPossibleGroundDetec() {
+bool Player::JumpPossibleGroundDetectorUltra() {
     if(getPosY() >= 250) return false;
     else return true;
 

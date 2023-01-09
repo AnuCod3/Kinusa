@@ -8,8 +8,8 @@
 #include "Player.h"
 #include "Menu.h"
 
-const int WIDTH = 1024;
-const int HEIGHT = 652;
+const int WIDTH = 1920;
+const int HEIGHT = 1080;
 const float GRAVITY = 50;
 using namespace std;
 Player Player;
@@ -24,6 +24,8 @@ Engine::Engine() {
 
     gameWindow.setFramerateLimit(60);
     bgTexture.loadFromFile("../background.png");
+    bgSprite.setTexture(bgTexture);
+    bgSprite.setScale(1 , 0.75);
     bgSprite.setTexture(bgTexture);
     isJump = false;
 
@@ -69,7 +71,7 @@ void Engine::input() {
         Player.stopJump();
     }
 
-     setIsJump(Player.JumpPossibleGroundDetec());
+     setIsJump(Player.JumpPossibleGroundDetectorUltra());
 }
 
 void Engine::update(float dtAsSeconds) {
@@ -86,6 +88,8 @@ void Engine::draw() {
     gameWindow.clear(Color::White);
     gameWindow.draw(bgSprite);
     gameWindow.draw(Player.getSprite());
+    gameWindow.draw(Player.hitbox1);
+    gameWindow.draw(Player.testRect);
     gameWindow.display();
 
 }

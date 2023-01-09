@@ -21,3 +21,5 @@ int main() {
     return 0;
 }
 
+//Add a map to the game and make it so that the player can move around the map and interact with objects on the map (like a door or a chest) and make it so that the player can attack enemies and the enemies can attack the player. Also make it so that the player can pick up items and use them.
+
