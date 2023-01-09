@@ -6,22 +6,27 @@
 #include <thread>
 #include "Engine.h"
 #include "Player.h"
+#include "Menu.h"
 
 const int WIDTH = 1024;
 const int HEIGHT = 652;
 const float GRAVITY = 50;
 using namespace std;
 Player Player;
+Menu Menu;
+
 
 Engine::Engine() {
     Vector2f resolution;
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
     gameWindow.create(VideoMode(WIDTH, HEIGHT), "Marioo by Anusan and Kilian");
+
     gameWindow.setFramerateLimit(60);
     bgTexture.loadFromFile("../background.png");
     bgSprite.setTexture(bgTexture);
     isJump = false;
+
 }
 
 void Engine::start() {
@@ -32,6 +37,7 @@ void Engine::start() {
         input();
         update(dtAsSeconds);
         draw();
+
     }
 }
 
@@ -40,6 +46,10 @@ void Engine::input() {
     if (Keyboard::isKeyPressed(Keyboard::Escape)) {
         gameWindow.close();
     }
+
+    /*if (Keyboard::isKeyPressed(Keyboard::F11)) {
+        RenderWindow gameWindow(sf::VideoMode::getDesktopMode(), "GUTE SPIL FON ANUSAN UND KILIAN", sf::Style::Fullscreen);
+    }*/
 
     if (Keyboard::isKeyPressed(Keyboard::A)) {
         Player.moveLeft();
@@ -68,6 +78,8 @@ void Engine::update(float dtAsSeconds) {
     // cout << Player.getPosY() << "\n";
     Player.collisionDetection();
     Player.setPosY((GRAVITY+120) * dtAsSeconds);
+
+    /*Player.setPosY((GRAVITY+120) * -dtAsSeconds);*/
 }
 
 void Engine::draw() {
@@ -81,4 +93,12 @@ void Engine::draw() {
 void Engine::setIsJump(bool val) {
     isJump = val;
 }
+
+/*float Engine::getWindowWidght() {
+    return gameWindow.getSize().x;
+}
+
+float Engine::getWindowHeight() {
+    return gameWindow.getSize().y;
+}*/
 

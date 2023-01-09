@@ -20,20 +20,24 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea1ae8ce-514e-446a-a041-87d7c0316a8e" name="Changes" comment="Jump Movement,&#10;- Minimale Anpassung der Werte">
-      <change afterPath="$PROJECT_DIR$/Level.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Level.h" afterDir="false" />
+    <list default="true" id="ea1ae8ce-514e-446a-a041-87d7c0316a8e" name="Changes" comment="Anfänge der Map">
+      <change afterPath="$PROJECT_DIR$/Menu.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Menu.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Engine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Engine.h" beforeDir="false" afterPath="$PROJECT_DIR$/Engine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Level.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-cac045555dab6d96fad6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-12-26T23-02-16-0237.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-Mario-Debug-0a982e6d92bf34ad33b0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/background.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+    </list>
+    <list id="2988d463-878c-44cd-86f5-0945d69f97dd" name="Changes by Kilian" comment="">
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -71,6 +75,7 @@
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/anush/CLionProjects/SFML_GUI&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -81,6 +86,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anush\CLionProjects\Marioi" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\anush\CLionProjects\Marioi" />
       <recent name="C:\Users\anush\CLionProjects\Marioi\tinyxml" />
@@ -115,7 +123,9 @@
       <workItem from="1672275768210" duration="105000" />
       <workItem from="1672351167292" duration="5171000" />
       <workItem from="1672356390472" duration="2387000" />
-      <workItem from="1672408980480" duration="2000" />
+      <workItem from="1672408980480" duration="678000" />
+      <workItem from="1672783723441" duration="4234000" />
+      <workItem from="1672955293570" duration="9565000" />
     </task>
     <task id="LOCAL-00001" summary="Border ergänzt und Movement teilweise erweitert">
       <created>1671930383775</created>
@@ -173,7 +183,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672275716461</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Anfänge der Map">
+      <created>1672409034018</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1672409034018</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +214,8 @@
     <MESSAGE value="Changes by Kilian" />
     <MESSAGE value="Jump Movement Verbessert/Ausgebaut,&#10;- Jump ist jetzt smoother" />
     <MESSAGE value="Jump Movement,&#10;- Minimale Anpassung der Werte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Jump Movement,&#10;- Minimale Anpassung der Werte" />
+    <MESSAGE value="Anfänge der Map" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anfänge der Map" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

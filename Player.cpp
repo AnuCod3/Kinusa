@@ -1,19 +1,32 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Engine.h"
+#include <iostream>
 using namespace std;
 Engine engine;
 Player::Player(){
     speed = 100;
     playerTexture.loadFromFile("../PlayerTexture.png");
     playerSprite.setTexture(playerTexture);
-    playerSprite.setPosition(250, 250);
-    //playerSprite.setScale(209, 209);
+    playerSprite.setPosition(200, 800);
+    playerSprite.setScale(0.45, 0.45);
     velocity.x = 8;
     velocity.y = 8;
     Leftpressed = false;
     Rightpressed = false;
     Uppressed = false;
+
+    testRect.setPosition(800,800);
+    testRect.setFillColor(sf::Color::Red);
+    testRect.setSize({20, 20});
+
+    hitbox1.setFillColor(sf::Color::Red);
+    hitbox1.setSize({60, 100});
+    hitbox1.setPosition(playerSprite.getPosition());
+    //show hitbox on window
+
+
+
 }
 Sprite Player::getSprite() {
     return playerSprite;
@@ -74,6 +87,7 @@ void Player::update(float elapsedTime) { // Erinnerung CollisionDetection Dynami
     if (Uppressed) {
         for (int i = 2; i < 7; ++i)
             playerSprite.move(0, -speed* elapsedTime*i*2.25);
+        // playerSprite.move(0, ((50+120) * -elapsedTime)); Cleaneres Jumpen (Das bei den anderen oben anwenden); Ausstehend
     }
 
     playerSprite.move(position);
@@ -132,12 +146,23 @@ Vector2f Player::getVel() {
 }
 
 void Player::collisionDetection() {
-    if (getPosY() > 250) playerSprite.setPosition(playerSprite.getPosition().x, 250);
-    if (getPosY() <= -25) playerSprite.setPosition(playerSprite.getPosition().x, -25);
 
-    if (getPosX() >= 668) playerSprite.setPosition(668, playerSprite.getPosition().y);
-    if (getPosX() <= -140) playerSprite.setPosition(-140, playerSprite.getPosition().y);
 
+    if (getPosY() >= 800) playerSprite.setPosition(playerSprite.getPosition().x, 800);
+    if (getPosY() <= -16) playerSprite.setPosition(playerSprite.getPosition().x, -16);
+
+    if (getPosX() >= 1752) playerSprite.setPosition(1752, playerSprite.getPosition().y);
+    if (getPosX() <= -63) playerSprite.setPosition(-63, playerSprite.getPosition().y);
+
+    /*if (getPosY() >= engine.getWindowHeight()-1955) playerSprite.setPosition(playerSprite.getPosition().x, engine.getWindowHeight()-1955);
+    if (getPosY() <= engine.getWindowHeight()-1920) playerSprite.setPosition(playerSprite.getPosition().x, engine.getWindowHeight()-1920);
+
+    if (getPosX() >= engine.getWindowWidght()-80) playerSprite.setPosition(engine.getWindowWidght()-30, playerSprite.getPosition().y);
+    if (getPosX() <= engine.getWindowWidght()-1990) playerSprite.setPosition(engine.getWindowWidght()-1990, playerSprite.getPosition().y);*/
+
+    if (getPosY() >= testRect.getPosition().y-100 /*&& getPosY() <= testRect.getPosition().y-20*/) playerSprite.setPosition(playerSprite.getPosition().x, testRect.getPosition().y-100);
+    if(getPosY() == getPosY()) std::cout << testRect.getPosition().y << " \n";
+    if(getPosY() == getPosY()) std::cout << getPosY() << " \nr";
 }
 
 bool Player::JumpPossibleGroundDetec() {

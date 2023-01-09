@@ -11,27 +11,44 @@ private:
 
     Vector2f position;
     Vector2f velocity;
+    Vector2f hitbox_width;
+    Vector2f hitbox_height;
+    Vector2f size; // Width and Height
+
     bool Leftpressed;
     bool Rightpressed;
     bool Uppressed;
     float speed;
+    float lifepoints;
+
+
+
     Texture playerTexture;
     Sprite playerSprite;
+
+
+
+
 
 public:
     Player();
     Sprite getSprite();
+    RectangleShape hitbox1;
+    RectangleShape hitbox2;
+
+    RectangleShape testRect;
+
 
         bool getIsJump();
         bool moveRight();
-         bool moveLeft();
+        bool moveLeft();
         bool jump();
         bool stopLeft();
         bool stopRight();
         bool stopJump();
         void update(float elapsedTime);
         void collisionDetection();
-       bool JumpPossibleGroundDetec();
+        bool JumpPossibleGroundDetectorUltra();
 
        void setPosX(float x);
        void setPosY(float y);
