@@ -96,11 +96,3 @@ void Engine::setIsJump(bool val) {
     isJump = val;
 }
 
-/*float Engine::getWindowWidght() {
-    return gameWindow.getSize().x;
-}
-
-float Engine::getWindowHeight() {
-    return gameWindow.getSize().y;
-}*/
-

@@ -24,8 +24,6 @@ public:
     void start();
     void setIsJump(bool isJump);
     bool getIsJump();
-    /*float getWindowWidght();
-    float getWindowHeight();*/
 };
 
 

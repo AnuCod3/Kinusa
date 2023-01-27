@@ -28,8 +28,6 @@ private:
 
 
 
-
-
 public:
     Player();
     Sprite getSprite();

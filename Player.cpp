@@ -59,7 +59,7 @@ bool Player::stopJump() {
 }
 
 
-void Player::update(float elapsedTime) { // Erinnerung CollisionDetection Dynamisch machen
+void Player::update(float elapsedTime) { //TODO: Erinnerung CollisionDetection Dynamisch machen
 
     if (Leftpressed) {
         if (Leftpressed && Uppressed) {
@@ -73,7 +73,7 @@ void Player::update(float elapsedTime) { // Erinnerung CollisionDetection Dynami
 
     if (Rightpressed) {
         if (Rightpressed && Uppressed) {
-            for (int i = 2; i < 7; ++i)
+            for (int i = 2; i < 3; ++i)
                 playerSprite.move(speed * elapsedTime*i*1.25, -speed*i * elapsedTime);
         }
         else
@@ -82,14 +82,13 @@ void Player::update(float elapsedTime) { // Erinnerung CollisionDetection Dynami
     }
 
     if (Uppressed) {
-        for (int i = 2; i < 7; ++i)
+        for (int i = 2; i < 3; ++i)
             playerSprite.move(0, -speed* elapsedTime*i*2.25);
-        // playerSprite.move(0, ((50+120) * -elapsedTime)); Cleaneres Jumpen (Das bei den anderen oben anwenden); Ausstehend
     }
 
     playerSprite.move(position);
-    collisionDetection();
     hitbox1.setPosition(playerSprite.getPosition());
+    collisionDetection();
 }
 
 
