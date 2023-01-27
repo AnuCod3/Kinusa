@@ -9,7 +9,6 @@ using namespace sf;
 
 class Engine {
 private:
-    RenderWindow gameWindow;
     Sprite bgSprite;
     Texture bgTexture;
     Texture playerTexture;

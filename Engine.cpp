@@ -14,13 +14,13 @@ const float GRAVITY = 50;
 using namespace std;
 Player Player;
 Menu Menu;
-
+RenderWindow gameWindow;
 
 Engine::Engine() {
     Vector2f resolution;
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
-    gameWindow.create(VideoMode(WIDTH, HEIGHT), "Marioo by Anusan and Kilian");
+    gameWindow.create(VideoMode(WIDTH, HEIGHT), "Marioo by Anusan and Kilian"); //XXXXXXXXXXXXXXX
 
     gameWindow.setFramerateLimit(60);
     bgTexture.loadFromFile("../background.png");
@@ -28,7 +28,6 @@ Engine::Engine() {
     bgSprite.setScale(1 , 0.75);
     bgSprite.setTexture(bgTexture);
     isJump = false;
-
 }
 
 void Engine::start() {
@@ -45,33 +44,32 @@ void Engine::start() {
 
 void Engine::input() {
     Clock Jumptimer;
-    if (Keyboard::isKeyPressed(Keyboard::Escape)) {
-        gameWindow.close();
-    }
+    Event event;
 
-    /*if (Keyboard::isKeyPressed(Keyboard::F11)) {
-        RenderWindow gameWindow(sf::VideoMode::getDesktopMode(), "GUTE SPIL FON ANUSAN UND KILIAN", sf::Style::Fullscreen);
-    }*/
+    while (gameWindow.pollEvent(event)) {
 
-    if (Keyboard::isKeyPressed(Keyboard::A)) {
-        Player.moveLeft();
-    } else {
-        Player.stopLeft();
-    }
-    if (Keyboard::isKeyPressed(Keyboard::D)) {
-        Player.moveRight();
-    } else {
-        Player.stopRight();
-    }
+        if (Keyboard::isKeyPressed(Keyboard::Escape)) {
+            gameWindow.close();
+        }
+        if (Keyboard::isKeyPressed(Keyboard::A)) {
+            Player.moveLeft();
+        } else {
+            Player.stopLeft();
+        }
+        if (Keyboard::isKeyPressed(Keyboard::D)) {
+            Player.moveRight();
+        } else {
+            Player.stopRight();
+        }
 
-    if (Keyboard::isKeyPressed(Keyboard::Space) && !isJump) {
-        isJump = true;
-        Player.jump();
-    } else {
-        Player.stopJump();
+        if (Keyboard::isKeyPressed(Keyboard::Space) && !isJump) {
+            isJump = true;
+            Player.jump();
+        } else {
+            Player.stopJump();
+        }
+        setIsJump(Player.JumpPossibleGroundDetectorUltra());
     }
-
-     setIsJump(Player.JumpPossibleGroundDetectorUltra());
 }
 
 void Engine::update(float dtAsSeconds) {

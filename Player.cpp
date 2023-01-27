@@ -16,13 +16,14 @@ Player::Player(){
     Rightpressed = false;
     Uppressed = false;
 
-    testRect.setPosition(800,800);
+    /*testRect.setPosition(800,800);
     testRect.setFillColor(sf::Color::Red);
-    testRect.setSize({20, 20});
+    testRect.setSize({20, 20});*/
 
-    hitbox1.setFillColor(sf::Color::Red);
-    hitbox1.setSize({60, 100});
-    hitbox1.setPosition(playerSprite.getPosition());
+    //TODO: Hitbox fertig einrichten. Neues Rectangle als Feind gegenstand. Playersprite Leben geben.
+    hitbox1.setFillColor(sf::Color::Green);
+    hitbox1.setSize({96, 125});
+    hitbox1.setPosition(playerSprite.getPosition()); //PRO
     //show hitbox on window
 
 
@@ -62,7 +63,7 @@ void Player::update(float elapsedTime) { // Erinnerung CollisionDetection Dynami
 
     if (Leftpressed) {
         if (Leftpressed && Uppressed) {
-            for (int i = 2; i < 7; ++i)
+            for (int i = 2; i < 3; ++i)
             playerSprite.move(-speed * elapsedTime*i*1.25, -speed*i * elapsedTime);
         }
         else
@@ -145,12 +146,12 @@ Vector2f Player::getVel() {
 
 void Player::collisionDetection() {
 
-
+     //TODO: Border noch fixxen
     if (getPosY() >= 800) playerSprite.setPosition(playerSprite.getPosition().x, 800);
-    if (getPosY() <= -16) playerSprite.setPosition(playerSprite.getPosition().x, -16);
+    if (getPosY() <= -21) playerSprite.setPosition(playerSprite.getPosition().x, -21);
 
-    if (getPosX() >= 1752) playerSprite.setPosition(1752, playerSprite.getPosition().y);
-    if (getPosX() <= -63) playerSprite.setPosition(-63, playerSprite.getPosition().y);
+    if (getPosX() >= 1772) playerSprite.setPosition(1772, playerSprite.getPosition().y);
+    if (getPosX() <= -49) playerSprite.setPosition(-49, playerSprite.getPosition().y);
 
     /*if (getPosY() >= engine.getWindowHeight()-1955) playerSprite.setPosition(playerSprite.getPosition().x, engine.getWindowHeight()-1955);
     if (getPosY() <= engine.getWindowHeight()-1920) playerSprite.setPosition(playerSprite.getPosition().x, engine.getWindowHeight()-1920);
@@ -158,13 +159,13 @@ void Player::collisionDetection() {
     if (getPosX() >= engine.getWindowWidght()-80) playerSprite.setPosition(engine.getWindowWidght()-30, playerSprite.getPosition().y);
     if (getPosX() <= engine.getWindowWidght()-1990) playerSprite.setPosition(engine.getWindowWidght()-1990, playerSprite.getPosition().y);*/
 
-    if (getPosY() >= testRect.getPosition().y-100 /*&& getPosY() <= testRect.getPosition().y-20*/) playerSprite.setPosition(playerSprite.getPosition().x, testRect.getPosition().y-100);
+    /*if (getPosY() >= testRect.getPosition().y-100 *//*&& getPosY() <= testRect.getPosition().y-20*//*) playerSprite.setPosition(playerSprite.getPosition().x, testRect.getPosition().y-100);
     if(getPosY() == getPosY()) std::cout << testRect.getPosition().y << " \n";
-    if(getPosY() == getPosY()) std::cout << getPosY() << " \nr";
+    if(getPosY() == getPosY()) std::cout << getPosY() << " \nr";*/
 }
 
 bool Player::JumpPossibleGroundDetectorUltra() {
-    if(getPosY() >= 250) return false;
+    if(getPosY() >= 800) return false;
     else return true;
 
 }

@@ -8,7 +8,7 @@ using namespace sf;
 
 class Player {
 private:
-
+    //TODO: Player Leben geben, so dass er in Kombi mit TestRect Damage nimmt
     Vector2f position;
     Vector2f velocity;
     Vector2f hitbox_width;
