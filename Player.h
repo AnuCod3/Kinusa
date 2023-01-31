@@ -21,8 +21,6 @@ private:
     float speed;
     float lifepoints;
 
-
-
     Texture playerTexture;
     Sprite playerSprite;
 
@@ -36,7 +34,6 @@ public:
 
     RectangleShape testRect;
 
-
         bool getIsJump();
         bool moveRight();
         bool moveLeft();
@@ -47,6 +44,7 @@ public:
         void update(float elapsedTime);
         void collisionDetection();
         bool JumpPossibleGroundDetectorUltra();
+        bool TurnPossibleDetectorUltra();
 
        void setPosX(float x);
        void setPosY(float y);

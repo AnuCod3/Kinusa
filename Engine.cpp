@@ -56,12 +56,11 @@ void Engine::input() {
         } else {
             Player.stopLeft();
         }
-        if (Keyboard::isKeyPressed(Keyboard::D)) {
+        if (Keyboard::isKeyPressed(Keyboard::D)){
             Player.moveRight();
         } else {
             Player.stopRight();
         }
-
         if (Keyboard::isKeyPressed(Keyboard::Space) && !isJump) {
             isJump = true;
             Player.jump();
@@ -74,19 +73,18 @@ void Engine::input() {
 
 void Engine::update(float dtAsSeconds) {
     Player.update(dtAsSeconds);
-
-    // cout << Player.getPosY() << "\n";
     Player.collisionDetection();
     Player.setPosY((GRAVITY+120) * dtAsSeconds);
 
     /*Player.setPosY((GRAVITY+120) * -dtAsSeconds);*/
+    // cout << Player.getPosY() << "\n";
 }
 
 void Engine::draw() {
     gameWindow.clear(Color::White);
     gameWindow.draw(bgSprite);
     gameWindow.draw(Player.getSprite());
-    gameWindow.draw(Player.hitbox1);
+    //gameWindow.draw(Player.hitbox1);
     gameWindow.draw(Player.testRect);
     gameWindow.display();
 

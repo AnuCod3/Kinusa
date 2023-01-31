@@ -23,6 +23,7 @@ public:
     Engine();
     void start();
     void setIsJump(bool isJump);
+    void setIsTurning(bool isTurning);
     bool getIsJump();
 };
 
