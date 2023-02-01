@@ -16,20 +16,20 @@ Player::Player(){
     Rightpressed = false;
     Uppressed = false;
 
-    lifepoints = 100; //LEBEN NOCH FUNKTION GEBEN
+    
 
     //TODO: Hitbox fertig einrichten. Neues Rectangle als Feind gegenstand. Playersprite Leben geben.
     hitbox1.setFillColor(sf::Color::Green);
     hitbox1.setSize({96, 125});
     hitbox1.setPosition(playerSprite.getPosition());
-
+    player1lifepoints = 100; //Funktion hinzufügen, dass der Sprite damit verknüpft ist
 
 
 }
 Sprite Player::getSprite() {
     return playerSprite;
 }
-//TODO: Position bug fixen
+//TODO: Position bug fixen - zum teil gefixt. isTurning abfrage notwendig aufgrund von mehrfachigen ändern der Position
 bool Player::moveLeft() {
     playerSprite.setScale(-0.45, 0.45); //Sprite spiegeln
     playerSprite.setPosition(playerSprite.getPosition().x + 30, playerSprite.getPosition().y);
@@ -63,7 +63,7 @@ bool Player::stopJump() {
 }
 
 
-void Player::update(float elapsedTime) { //TODO: Erinnerung CollisionDetection Dynamisch machen
+void Player::update(float elapsedTime) { //TODO: CollisionDetection Dynamisch machen
 
     if (Leftpressed) {
         if (Leftpressed && Uppressed) {
