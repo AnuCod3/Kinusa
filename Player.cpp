@@ -15,14 +15,14 @@ Player::Player(){
     Leftpressed = false;
     Rightpressed = false;
     Uppressed = false;
-
-    
+    isTurningLeft = false;
+    isTurningRight = false;
 
     //TODO: Hitbox fertig einrichten. Neues Rectangle als Feind gegenstand. Playersprite Leben geben.
     hitbox1.setFillColor(sf::Color::Green);
     hitbox1.setSize({96, 125});
     hitbox1.setPosition(playerSprite.getPosition());
-    player1lifepoints = 100; //Funktion hinzufügen, dass der Sprite damit verknüpft ist
+
 
 
 }
@@ -31,15 +31,22 @@ Sprite Player::getSprite() {
 }
 //TODO: Position bug fixen - zum teil gefixt. isTurning abfrage notwendig aufgrund von mehrfachigen ändern der Position
 bool Player::moveLeft() {
+    if (isTurningLeft == false) {
+        playerSprite.setPosition(playerSprite.getPosition().x + 30, playerSprite.getPosition().y);
+        isTurningLeft = true;
+        isTurningRight = false;
+    }
     playerSprite.setScale(-0.45, 0.45); //Sprite spiegeln
-    playerSprite.setPosition(playerSprite.getPosition().x + 30, playerSprite.getPosition().y);
-
     return Leftpressed = true;
 }
 
 bool Player::moveRight() {
+    if (isTurningRight == false) {
+        playerSprite.setPosition(playerSprite.getPosition().x - 30, playerSprite.getPosition().y);
+        isTurningRight = true;
+        isTurningLeft = false;
+    }
     playerSprite.setScale(0.45, 0.45);
-    playerSprite.setPosition(playerSprite.getPosition().x - 30, playerSprite.getPosition().y);
     return Rightpressed = true;
 }
 
@@ -162,5 +169,18 @@ bool Player::JumpPossibleGroundDetectorUltra() {
     else return true;
 
 }
+
+bool Player::teleportfixer() {
+    if (isTurningLeft = false) return false;
+    else return true;
+    if (isTurningRight = false) return false;
+    else return true;
+}
+
+void Player::setIsTurning(bool val) {
+    isTurningLeft = val;
+    isTurningRight = val;
+}
+
 
 

@@ -18,6 +18,8 @@ private:
     bool Leftpressed;
     bool Rightpressed;
     bool Uppressed;
+    bool isTurningLeft;
+    bool isTurningRight;
     float speed;
     float lifepoints;
 
@@ -44,7 +46,8 @@ public:
         void update(float elapsedTime);
         void collisionDetection();
         bool JumpPossibleGroundDetectorUltra();
-        bool TurnPossibleDetectorUltra();
+        bool teleportfixer();
+        void setIsTurning(bool isTurning);
 
        void setPosX(float x);
        void setPosY(float y);

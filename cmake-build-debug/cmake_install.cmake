@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/mitre/CLionProjects/Fake-MarioooPull
+# Install script for directory: C:/Users/Kilian Mitrenga/CLionProjects/Fake-Mariooooo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/mitre/CLionProjects/Fake-MarioooPull/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/Kilian Mitrenga/CLionProjects/Fake-Mariooooo/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

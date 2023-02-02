@@ -20,7 +20,7 @@ Engine::Engine() {
     Vector2f resolution;
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
-    gameWindow.create(VideoMode(WIDTH, HEIGHT), "Marioo by Anusan and Kilian"); //XXXXXXXXXXXXXXX
+    gameWindow.create(VideoMode(WIDTH, HEIGHT), "Kinusa"); //XXXXXXXXXXXXXXX
 
     gameWindow.setFramerateLimit(60);
     bgTexture.loadFromFile("../background.png");
@@ -68,6 +68,7 @@ void Engine::input() {
             Player.stopJump();
         }
         setIsJump(Player.JumpPossibleGroundDetectorUltra());
+        Player.setIsTurning(Player.teleportfixer());
     }
 }
 
@@ -93,4 +94,7 @@ void Engine::draw() {
 void Engine::setIsJump(bool val) {
     isJump = val;
 }
+
+
+
 

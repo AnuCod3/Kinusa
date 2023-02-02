@@ -15,6 +15,7 @@ private:
     Sprite playerSprite;
     Player playerone;
     bool isJump;
+
     void input();
     void update(float dtAsSeconds);
     void draw();
@@ -23,7 +24,6 @@ public:
     Engine();
     void start();
     void setIsJump(bool isJump);
-    void setIsTurning(bool isTurning);
     bool getIsJump();
 };
 
