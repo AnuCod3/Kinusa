@@ -29,10 +29,10 @@ Player::Player(){
 Sprite Player::getSprite() {
     return playerSprite;
 }
-//TODO: Position bug fixen - zum teil gefixt. isTurning abfrage notwendig aufgrund von mehrfachigen ändern der Position
+
 bool Player::moveLeft() {
-    if (isTurningLeft == false) {
-        playerSprite.setPosition(playerSprite.getPosition().x + 30, playerSprite.getPosition().y);
+    if (!isTurningLeft) {
+        playerSprite.setPosition(playerSprite.getPosition().x + 70, playerSprite.getPosition().y);
         isTurningLeft = true;
         isTurningRight = false;
     }
@@ -41,8 +41,8 @@ bool Player::moveLeft() {
 }
 
 bool Player::moveRight() {
-    if (isTurningRight == false) {
-        playerSprite.setPosition(playerSprite.getPosition().x - 30, playerSprite.getPosition().y);
+    if (!isTurningRight) {
+        playerSprite.setPosition(playerSprite.getPosition().x - 70, playerSprite.getPosition().y);
         isTurningRight = true;
         isTurningLeft = false;
     }
@@ -168,13 +168,6 @@ bool Player::JumpPossibleGroundDetectorUltra() {
     if(getPosY() >= 800) return false;
     else return true;
 
-}
-
-bool Player::teleportfixer() {
-    if (isTurningLeft = false) return false;
-    else return true;
-    if (isTurningRight = false) return false;
-    else return true;
 }
 
 void Player::setIsTurning(bool val) {

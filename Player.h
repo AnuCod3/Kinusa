@@ -46,7 +46,6 @@ public:
         void update(float elapsedTime);
         void collisionDetection();
         bool JumpPossibleGroundDetectorUltra();
-        bool teleportfixer();
         void setIsTurning(bool isTurning);
 
        void setPosX(float x);

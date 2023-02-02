@@ -68,7 +68,6 @@ void Engine::input() {
             Player.stopJump();
         }
         setIsJump(Player.JumpPossibleGroundDetectorUltra());
-        Player.setIsTurning(Player.teleportfixer());
     }
 }
 
