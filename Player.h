@@ -21,7 +21,6 @@ private:
     bool isTurningLeft;
     bool isTurningRight;
     float speed;
-    float lifepoints;
 
     Texture playerTexture;
     Sprite playerSprite;
@@ -33,6 +32,7 @@ public:
     Sprite getSprite();
     RectangleShape hitbox1;
     RectangleShape hitbox2;
+    RectangleShape liferect;
 
     RectangleShape testRect;
 
@@ -55,6 +55,7 @@ public:
        /*Sprite getSprite();*/
        float getPosX();
        float getPosY();
+       float lifepointsP1;
        Vector2f getPos();
 
     void setVelX(float x);

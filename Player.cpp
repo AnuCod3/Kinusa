@@ -17,13 +17,30 @@ Player::Player(){
     Uppressed = false;
     isTurningLeft = false;
     isTurningRight = true; //rechts muss auf true gesetzt werden, damit der Spieler beim start nicht direkt nach links buggt
+    lifepointsP1 = 100;
 
     //TODO: Hitbox fertig einrichten. Neues Rectangle als Feind gegenstand. Playersprite Leben geben.
     hitbox1.setFillColor(sf::Color::Green);
     hitbox1.setSize({96, 125});
     hitbox1.setPosition(playerSprite.getPosition());
 
+    //create an test rectangle which gives the player damage
+    testRect.setFillColor(sf::Color::Red);
+    testRect.setSize({96, 125});
+    testRect.setPosition(1000, 800);
 
+    liferect.setFillColor(sf::Color::Blue);
+    liferect.setSize({lifepointsP1*2, 30});
+    liferect.setPosition(100, 100);
+
+    Text lifetext;
+    Font font;
+    font.loadFromFile("../arial.ttf");
+    lifetext.setFont(font);
+    lifetext.setString("Leben");
+    lifetext.setCharacterSize(24);
+    lifetext.setFillColor(sf::Color::White);
+    lifetext.setPosition(100, 50);
 
 }
 Sprite Player::getSprite() {

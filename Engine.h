@@ -15,7 +15,7 @@ private:
     Sprite playerSprite;
     Player playerone;
     bool isJump;
-
+    void drawlife();
     void input();
     void update(float dtAsSeconds);
     void draw();

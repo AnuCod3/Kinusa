@@ -91,8 +91,9 @@ void Engine::draw() {
     gameWindow.clear(Color::White);
     gameWindow.draw(bgSprite);
     gameWindow.draw(Player.getSprite());
-    //gameWindow.draw(Player.hitbox1);
     gameWindow.draw(Player.testRect);
+    gameWindow.draw(Player.liferect);
+
     gameWindow.display();
 
 }
@@ -100,6 +101,8 @@ void Engine::draw() {
 void Engine::setIsJump(bool val) {
     isJump = val;
 }
+
+
 
 
 
