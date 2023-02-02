@@ -3,8 +3,8 @@
 //
 
 #include "Menu.h"
-
-
+#include "Engine.h"
+Engine engine;
 Menu::Menu() {
     // Lade Hintergrund-Textur
     /*backgroundTexture.loadFromFile("background.png");*/
@@ -35,7 +35,6 @@ Menu::Menu() {
     button3.setPosition(100, 200);
     buttons.push_back(button3);
 }
-
 
 void Menu::processInput(sf::Event event) {
 // Verarbeite Benutzereingaben

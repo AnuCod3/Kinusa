@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Engine.h"
+#include "Menu.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,6 +16,7 @@ using namespace sf;
 
 int main() {
     Engine engine;
+    Menu menu;
 
     engine.start();
 

@@ -9,6 +9,7 @@
 #endif //MARIO_MENU_H
 
 #include "SFML/Graphics.hpp"
+#include "Engine.h"
 #include <vector>
 
 class Menu
@@ -17,7 +18,7 @@ public:
     Menu();
     void processInput(sf::Event event);
     void update();
-    void draw(sf::RenderWindow& window);
+    void start();
 
 private:
     std::vector<sf::Text> buttons;

@@ -16,7 +16,7 @@ Player::Player(){
     Rightpressed = false;
     Uppressed = false;
     isTurningLeft = false;
-    isTurningRight = false;
+    isTurningRight = true; //rechts muss auf true gesetzt werden, damit der Spieler beim start nicht direkt nach links buggt
 
     //TODO: Hitbox fertig einrichten. Neues Rectangle als Feind gegenstand. Playersprite Leben geben.
     hitbox1.setFillColor(sf::Color::Green);
