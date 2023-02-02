@@ -157,7 +157,7 @@ Vector2f Player::getVel() {
 void Player::collisionDetection() {
 
     //TODO: Border noch fixxen
-    if (getPosY() >= 800) playerSprite.setPosition(playerSprite.getPosition().x, 800);
+    if (getPosY() >= 753) playerSprite.setPosition(playerSprite.getPosition().x, 753);
     if (getPosY() <= -21) playerSprite.setPosition(playerSprite.getPosition().x, -21);
 
     if (getPosX() >= 1772) playerSprite.setPosition(1772, playerSprite.getPosition().y);
@@ -165,7 +165,7 @@ void Player::collisionDetection() {
 }
 
 bool Player::JumpPossibleGroundDetectorUltra() {
-    if(getPosY() >= 800) return false;
+    if(getPosY() >= 753) return false;
     else return true;
 
 }

@@ -18,14 +18,21 @@ RenderWindow gameWindow;
 
 Engine::Engine() {
     Vector2f resolution;
+    Vector2f resize;
+    resize.x = 1920;
+    resize.y = 1080;
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
     gameWindow.create(VideoMode(WIDTH, HEIGHT), "Kinusa"); //XXXXXXXXXXXXXXX
 
     gameWindow.setFramerateLimit(60);
-    bgTexture.loadFromFile("../background.png");
+    bgTexture.loadFromFile("../NewLevel.png");
     bgSprite.setTexture(bgTexture);
     bgSprite.setScale(1 , 0.75);
+    bgSprite.setScale(
+            resize.x / bgTexture.getSize().x,
+            resize.y / bgTexture.getSize().y
+            );
     bgSprite.setTexture(bgTexture);
     isJump = false;
 }

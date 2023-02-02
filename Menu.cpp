@@ -4,7 +4,7 @@
 
 #include "Menu.h"
 #include "Engine.h"
-Engine engine;
+
 Menu::Menu() {
     // Lade Hintergrund-Textur
     /*backgroundTexture.loadFromFile("background.png");*/
