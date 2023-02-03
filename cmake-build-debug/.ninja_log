@@ -1,14 +1,13 @@
 # ninja log v5
 4	1600	6970467496632994	CMakeFiles/Mario.dir/main.cpp.obj	f2667b1196b6abce
-1643	2874	6970467509237430	Mario.exe	d8b9369d6e060f9e
-8	1457	6970467495023468	CMakeFiles/Mario.dir/Player.cpp.obj	c05da94aa279085b
-12	1615	6970467496692842	CMakeFiles/Mario.dir/Engine.cpp.obj	f72b48d60b1dd449
-17	1643	6970467497074215	CMakeFiles/Mario.dir/Menu.cpp.obj	792d33a8dcf452c3
-4	863	6970467997470182	CMakeFiles/Mario.dir/Player.cpp.obj	c05da94aa279085b
-8	993	6970467998779536	CMakeFiles/Mario.dir/Engine.cpp.obj	f72b48d60b1dd449
-993	2002	6970468008798814	Mario.exe	d8b9369d6e060f9e
-6	1346	6970469238390523	CMakeFiles/Mario.dir/Player.cpp.obj	c05da94aa279085b
-1354	2412	6970469248986986	Mario.exe	d8b9369d6e060f9e
+794	1756	6970471998946922	Mario.exe	d8b9369d6e060f9e
 4	947	6970471829477122	CMakeFiles/Mario.dir/Player.cpp.obj	c05da94aa279085b
 3	793	6970471989402339	CMakeFiles/Mario.dir/Engine.cpp.obj	f72b48d60b1dd449
-794	1756	6970471998946922	Mario.exe	d8b9369d6e060f9e
+17	1643	6970467497074215	CMakeFiles/Mario.dir/Menu.cpp.obj	792d33a8dcf452c3
+3	770	6970684150176977	CMakeFiles/Mario.dir/main.cpp.obj	1016cc0f6e58bc79
+22	794	6970684150416992	CMakeFiles/Mario.dir/Menu.cpp.obj	dc4c225983e669c5
+9	809	6970684150586974	CMakeFiles/Mario.dir/Player.cpp.obj	aba2c7a3489a796d
+15	887	6970684151346980	CMakeFiles/Mario.dir/Engine.cpp.obj	f334e722fadc8af4
+887	1744	6970684159756975	Mario.exe	d8b9369d6e060f9e
+5	682	6970684836506182	CMakeFiles/Mario.dir/Player.cpp.obj	aba2c7a3489a796d
+683	1562	6970684845131181	Mario.exe	d8b9369d6e060f9e

@@ -29,7 +29,7 @@ Player::Player(){
     testRect.setSize({96, 125});
     testRect.setPosition(1000, 800);
 
-    liferect.setFillColor(sf::Color::Blue);
+    liferect.setFillColor(sf::Color::Green);
     liferect.setSize({lifepointsP1*2, 30});
     liferect.setPosition(100, 100);
 
