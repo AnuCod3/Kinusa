@@ -1,15 +1,18 @@
 #include <SFML/Graphics.hpp>
 #include "Player.h"
 #include "Engine.h"
-#include <iostream>
+
 using namespace std;
 Engine engine;
-Player::Player(){
+
+//TODO: Neuer Char mit Spritesheet und Animationen (Idle,Laufen,Sprung,Angriff)
+Player::Player() {
     speed = 100;
     playerTexture.loadFromFile("../PlayerTexture.png");
     playerSprite.setTexture(playerTexture);
     playerSprite.setPosition(200, 800);
     playerSprite.setScale(0.45, 0.45);
+
     velocity.x = 8;
     velocity.y = 8;
     Leftpressed = false;
@@ -19,30 +22,19 @@ Player::Player(){
     isTurningRight = true; //rechts muss auf true gesetzt werden, damit der Spieler beim start nicht direkt nach links buggt
     lifepointsP1 = 100;
 
-    //TODO: Hitbox fertig einrichten. Neues Rectangle als Feind gegenstand. Playersprite Leben geben.
     hitbox1.setFillColor(sf::Color::Green);
     hitbox1.setSize({96, 125});
     hitbox1.setPosition(playerSprite.getPosition());
 
-    //create an test rectangle which gives the player damage
     testRect.setFillColor(sf::Color::Red);
     testRect.setSize({96, 125});
     testRect.setPosition(1000, 800);
 
     liferect.setFillColor(sf::Color::Green);
-    liferect.setSize({lifepointsP1*2, 30});
+    liferect.setSize({lifepointsP1 * 2, 30});
     liferect.setPosition(100, 100);
-
-    Text lifetext;
-    Font font;
-    font.loadFromFile("../arial.ttf");
-    lifetext.setFont(font);
-    lifetext.setString("Leben");
-    lifetext.setCharacterSize(24);
-    lifetext.setFillColor(sf::Color::White);
-    lifetext.setPosition(100, 50);
-
 }
+
 Sprite Player::getSprite() {
     return playerSprite;
 }
@@ -68,7 +60,6 @@ bool Player::moveRight() {
 }
 
 
-
 bool Player::jump() {
     return Uppressed = true;
 }
@@ -86,32 +77,30 @@ bool Player::stopJump() {
     return Uppressed = false;
 }
 
-
-void Player::update(float elapsedTime) { //TODO: CollisionDetection Dynamisch machen
+//TODO: CollisionDetection Dynamisch machen
+void Player::update(float elapsedTime) {
 
     if (Leftpressed) {
         if (Leftpressed && Uppressed) {
             for (int i = 2; i < 3; ++i)
-            playerSprite.move(-speed * elapsedTime*i*1.25, -speed*i * elapsedTime);
-        }
-        else
+                playerSprite.move(-speed * elapsedTime * i * 1.25, -speed * i * elapsedTime);
+        } else
             for (int i = 2; i < 3; ++i)
-                playerSprite.move(-speed * elapsedTime*i*1.25, 0);
+                playerSprite.move(-speed * elapsedTime * i * 1.25, 0);
     }
 
     if (Rightpressed) {
         if (Rightpressed && Uppressed) {
             for (int i = 2; i < 3; ++i)
-                playerSprite.move(speed * elapsedTime*i*1.25, -speed*i * elapsedTime);
-        }
-        else
+                playerSprite.move(speed * elapsedTime * i * 1.25, -speed * i * elapsedTime);
+        } else
             for (int i = 2; i < 3; ++i)
-                playerSprite.move(speed * elapsedTime*i*1.25, 0);
+                playerSprite.move(speed * elapsedTime * i * 1.25, 0);
     }
 
     if (Uppressed) {
         for (int i = 2; i < 3; ++i)
-            playerSprite.move(0, -speed* elapsedTime*i*2.25);
+            playerSprite.move(0, -speed * elapsedTime * i * 2.25);
     }
 
     playerSprite.move(position);
@@ -125,12 +114,6 @@ void Player::setPosX(float x) {
 }
 
 void Player::setPosY(float y) {
-    //playerSprite.setPosition(playerSprite.getPosition().x, playerSprite.getPosition().y);
-    position.y = y;
-}
-
-void Player::setPos(float x, float y) {
-    position.x = x;
     position.y = y;
 }
 
@@ -142,34 +125,6 @@ float Player::getPosY() {
     return playerSprite.getPosition().y;
 }
 
-Vector2f Player::getPos() {
-    return position;
-}
-
-void Player::setVelX(float x) {
-    velocity.x = x;
-}
-
-void Player::setVelY(float y) {
-    velocity.y = y;
-}
-
-void Player::setVel(float x, float y) {
-    velocity.x = x;
-    velocity.y = y;
-}
-
-float Player::getVelX() {
-    return velocity.x;
-}
-
-float Player::getVelY() {
-    return velocity.y;
-}
-
-Vector2f Player::getVel() {
-    return velocity;
-}
 
 void Player::collisionDetection() {
 
@@ -179,10 +134,36 @@ void Player::collisionDetection() {
 
     if (getPosX() >= 1772) playerSprite.setPosition(1772, playerSprite.getPosition().y);
     if (getPosX() <= -49) playerSprite.setPosition(-49, playerSprite.getPosition().y);
+
+
+    //Damagedetection
+    bool hasTakenDamage = false;
+    if (hitbox1.getGlobalBounds().intersects(testRect.getGlobalBounds())) {
+        hasTakenDamage = true;
+        lifepointsP1 -= 10;
+        liferect.setSize({lifepointsP1 * 2, 30});
+        if (isTurningLeft) {
+            playerSprite.setPosition(playerSprite.getPosition().x + 50, playerSprite.getPosition().y);
+        } else if (isTurningRight) {
+            playerSprite.setPosition(playerSprite.getPosition().x - 50, playerSprite.getPosition().y);
+        }
+    }
+
+    if (!hasTakenDamage) playerSprite.setColor(sf::Color::White);
+    else playerSprite.setColor(sf::Color::Red);
+
+    //Respawn
+    //TODO: Player blinken lassen wenn er respawned
+    if (lifepointsP1 <= 0) {
+        playerSprite.setPosition(0, 800);
+        lifepointsP1 = 100;
+        liferect.setSize({lifepointsP1 * 2, 30});
+
+    }
 }
 
 bool Player::JumpPossibleGroundDetectorUltra() {
-    if(getPosY() >= 753) return false;
+    if (getPosY() >= 753) return false;
     else return true;
 
 }

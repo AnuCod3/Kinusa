@@ -3,6 +3,7 @@
 //
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+
 #ifndef MARIO_ENGINE_H
 #define MARIO_ENGINE_H
 using namespace sf;
@@ -15,19 +16,21 @@ private:
     Sprite playerSprite;
     Player playerone;
     bool isJump;
-    void drawlife();
+
     void input();
+
     void update(float dtAsSeconds);
+
     void draw();
 
 public:
     Engine();
+
     void start();
+
     void setIsJump(bool isJump);
-    bool getIsJump();
+
 };
-
-
 
 
 #endif //MARIO_ENGINE_H

@@ -1,8 +1,6 @@
 //
 // Created by anush on 27.12.2022.
 //
-#include <iostream>
-#include <chrono>
 #include <thread>
 #include "Engine.h"
 #include "Player.h"
@@ -16,6 +14,10 @@ Player Player;
 Menu Menu;
 RenderWindow gameWindow;
 
+//TODO: Einstellungen einbauen für die Auflösung und die FPS Anzeige und die FPS selbst, Vollbildmodus, Sound, Musik, Tastaturbelegung, etc.
+//TODO: Einstellungen speichern und laden
+//TODO: Getter uns Setter ENDLICH richtig einbauen und ordnen
+
 Engine::Engine() {
     Vector2f resolution;
     Vector2f resize;
@@ -23,16 +25,15 @@ Engine::Engine() {
     resize.y = 1080;
     resolution.x = VideoMode::getDesktopMode().width;
     resolution.y = VideoMode::getDesktopMode().height;
-    gameWindow.create(VideoMode(WIDTH, HEIGHT), "Kinusa"); //XXXXXXXXXXXXXXX
-
+    gameWindow.create(VideoMode(WIDTH, HEIGHT), "Kinusa");
     gameWindow.setFramerateLimit(60);
     bgTexture.loadFromFile("../NewLevel.png");
     bgSprite.setTexture(bgTexture);
-    bgSprite.setScale(1 , 0.75);
+    bgSprite.setScale(1, 0.75);
     bgSprite.setScale(
             resize.x / bgTexture.getSize().x,
             resize.y / bgTexture.getSize().y
-            );
+    );
     bgSprite.setTexture(bgTexture);
     isJump = false;
 }
@@ -51,8 +52,8 @@ void Engine::start() {
 
 void Engine::input() {
     Clock Jumptimer;
-    Event event;
-
+    Event event{};
+//TODO: Steuerung deaktivieren und aktivieren lassen (z.B deaktivieren für paar sek nach respawn)
     while (gameWindow.pollEvent(event)) {
 
         if (Keyboard::isKeyPressed(Keyboard::Escape)) {
@@ -63,7 +64,7 @@ void Engine::input() {
         } else {
             Player.stopLeft();
         }
-        if (Keyboard::isKeyPressed(Keyboard::D)){
+        if (Keyboard::isKeyPressed(Keyboard::D)) {
             Player.moveRight();
         } else {
             Player.stopRight();
@@ -81,10 +82,7 @@ void Engine::input() {
 void Engine::update(float dtAsSeconds) {
     Player.update(dtAsSeconds);
     Player.collisionDetection();
-    Player.setPosY((GRAVITY+120) * dtAsSeconds);
-
-    /*Player.setPosY((GRAVITY+120) * -dtAsSeconds);*/
-    // cout << Player.getPosY() << "\n";
+    Player.setPosY((GRAVITY + 120) * dtAsSeconds);
 }
 
 void Engine::draw() {
@@ -95,7 +93,6 @@ void Engine::draw() {
     gameWindow.draw(Player.liferect);
 
     gameWindow.display();
-
 }
 
 void Engine::setIsJump(bool val) {

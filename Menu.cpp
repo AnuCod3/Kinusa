@@ -5,127 +5,63 @@
 #include "Menu.h"
 #include "Engine.h"
 
+//TODO: Menü komplett neu aufbauen (Buttons, Texte, etc.) und in die Engine einbauen
+
+//Create Menu with Start and settings button
 Menu::Menu() {
-    // Lade Hintergrund-Textur
-    /*backgroundTexture.loadFromFile("background.png");*/
-    background.setTexture(backgroundTexture);
+    //Create Background
+    Texture bgTexture;
+    bgTexture.loadFromFile("../NewLevel.png");
+    Sprite bgSprite;
+    bgSprite.setTexture(bgTexture);
+    bgSprite.setScale(1, 0.75);
+    bgSprite.setScale(
+            1920 / bgTexture.getSize().x,
+            1080 / bgTexture.getSize().y
+    );
+    bgSprite.setTexture(bgTexture);
 
-    // Erstelle Buttons
-    sf::Text button1;
-    button1.setString("Start Game");
-    button1.setCharacterSize(24);
-    button1.setStyle(sf::Text::Bold);
-    button1.setFillColor(sf::Color::White);
-    button1.setPosition(100, 100);
-    buttons.push_back(button1);
+    //Create Start Button
+    Texture startTexture;
+    startTexture.loadFromFile("../StartButton.png");
+    Sprite startSprite;
+    startSprite.setTexture(startTexture);
+    startSprite.setScale(1, 0.75);
+    startSprite.setScale(
+            1920 / startTexture.getSize().x,
+            1080 / startTexture.getSize().y
+    );
+    startSprite.setTexture(startTexture);
+    startSprite.setPosition(1920 / 2 - startTexture.getSize().x / 2, 1080 / 2 - startTexture.getSize().y / 2);
 
-    sf::Text button2;
-    button2.setString("Options");
-    button2.setCharacterSize(24);
-    button2.setStyle(sf::Text::Bold);
-    button2.setFillColor(sf::Color::White);
-    button2.setPosition(100, 150);
-    buttons.push_back(button2);
+    //Create Settings Button
+    Texture settingsTexture;
+    settingsTexture.loadFromFile("../SettingsButton.png");
+    Sprite settingsSprite;
+    settingsSprite.setTexture(settingsTexture);
+    settingsSprite.setScale(1, 0.75);
+    settingsSprite.setScale(
+            1920 / settingsTexture.getSize().x,
+            1080 / settingsTexture.getSize().y
+    );
+    settingsSprite.setTexture(settingsTexture);
+    settingsSprite.setPosition(1920 / 2 - settingsTexture.getSize().x / 2, 1080 / 2 - settingsTexture.getSize().y / 2 + 100);
 
-    sf::Text button3;
-    button3.setString("Quit");
-    button3.setCharacterSize(24);
-    button3.setStyle(sf::Text::Bold);
-    button3.setFillColor(sf::Color::White);
-    button3.setPosition(100, 200);
-    buttons.push_back(button3);
+    //Create Exit Button
+    Texture exitTexture;
+    exitTexture.loadFromFile("../ExitButton.png");
+    Sprite exitSprite;
+    exitSprite.setTexture(exitTexture);
+    exitSprite.setScale(1, 0.75);
+    exitSprite.setScale(
+            1920 / exitTexture.getSize().x,
+            1080 / exitTexture.getSize().y
+    );
+    exitSprite.setTexture(exitTexture);
+    exitSprite.setPosition(1920 / 2 - exitTexture.getSize().x / 2, 1080 / 2 - exitTexture.getSize().y / 2 + 200);
+
+    //Create Text
+    Font font;
+    font.loadFromFile("../arial.ttf");
+    Text text;
 }
-
-void Menu::processInput(sf::Event event) {
-// Verarbeite Benutzereingaben
-    if (event.type == sf::Event::MouseMoved) {
-        // Markiere den Button, auf den der Mauszeiger zeigt, als aktiv
-        for (auto &button: buttons) {
-            sf::FloatRect buttonRect(button.getPosition(), button.getScale()); // .size) stand da ursprünglich
-            if (buttonRect.contains(event.mouseMove.x, event.mouseMove.y))
-                button.setFillColor(sf::Color::Red);
-            else
-                button.setFillColor(sf::Color::White);
-        }
-    } else if (event.type == sf::Event::MouseButtonReleased) {
-        // Prüfe, ob auf einen Button geklickt wurde
-        for (auto &button: buttons) {
-            sf::FloatRect buttonRect(button.getPosition(), button.getScale());
-            if (buttonRect.contains(event.mouseButton.x, event.mouseButton.y)) {
-                if (button.getString() == "Start Game") {
-                    // Starte das Spiel
-                } else if (button.getString() == "Options") {
-                    // Öffne das Options-Menü
-                } else if (button.getString() == "Quit") {
-                    // Beende das Programm
-                }
-            }
-        }
-    }
-}
-
-/*void draw(sf::RenderWindow& window) {
-    draw(); // Ein neues Windows erstellen
-}*/
-
-
-
-/*   Menu::Menu(float width, float height)
-{
-   if (!font.loadFromFile("../arial.ttf"))
-   {
-       // handle error
-   }
-
-   menu[0].setFont(font);
-   menu[0].setColor(sf::Color::Red);
-   menu[0].setString("Play");
-   menu[0].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 1));
-
-   menu[1].setFont(font);
-   menu[1].setColor(sf::Color::White);
-   menu[1].setString("Options");
-   menu[1].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 2));
-
-   menu[2].setFont(font);
-   menu[2].setColor(sf::Color::White);
-   menu[2].setString("Exit");
-   menu[2].setPosition(sf::Vector2f(width / 2, height / (MAX_NUMBER_OF_ITEMS + 1) * 3));
-
-   selectedItemIndex = 0;
-
-
-
-Menu::~Menu()
-{
-}
-
-void Menu::draw(sf::RenderWindow &window)
-{
-   for (int i = 0; i < MAX_NUMBER_OF_ITEMS; i++)
-   {
-       window.draw(menu[i]);
-   }
-}
-
-void Menu::MoveUp()
-{
-   if (selectedItemIndex - 1 >= 0)
-   {
-       menu[selectedItemIndex].setColor(sf::Color::White);
-       selectedItemIndex--;
-       menu[selectedItemIndex].setColor(sf::Color::Red);
-   }
-}
-
-void Menu::MoveDown()
-{
-   if (selectedItemIndex + 1 < MAX_NUMBER_OF_ITEMS)
-   {
-       menu[selectedItemIndex].setColor(sf::Color::White);
-       selectedItemIndex++;
-       menu[selectedItemIndex].setColor(sf::Color::Red);
-   }
-}
-
- */
