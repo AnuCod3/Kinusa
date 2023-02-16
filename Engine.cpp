@@ -4,14 +4,13 @@
 #include <thread>
 #include "Engine.h"
 #include "Player.h"
-#include "Menu.h"
+
 
 const int WIDTH = 1920;
 const int HEIGHT = 1080;
 const float GRAVITY = 50;
 using namespace std;
 Player Player;
-Menu Menu;
 RenderWindow gameWindow;
 
 //TODO: Einstellungen einbauen für die Auflösung und die FPS Anzeige und die FPS selbst, Vollbildmodus, Sound, Musik, Tastaturbelegung, etc.
